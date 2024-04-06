@@ -27,6 +27,8 @@ Parameters:
       - amplify
   Repository:
     Type: String
+  BranchName:
+    Type: String
 
 Conditions:
   DeployToAmplifyHosting: !Equals
@@ -384,7 +386,7 @@ Resources:
     Type: AWS::Amplify::Branch
     Condition: DeployToAmplifyHosting
     Properties:
-      BranchName: main
+      BranchName: !Ref BranchName
       AppId: !GetAtt AmplifyApp.AppId
       EnableAutoBuild: true
 
