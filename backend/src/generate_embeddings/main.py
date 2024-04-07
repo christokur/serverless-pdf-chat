@@ -2,10 +2,9 @@ import os, json
 import boto3
 from aws_lambda_powertools import Logger
 from langchain_community.embeddings import BedrockEmbeddings
-from langchain.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import PyPDFLoader
+from langchain_community.vectorstores import FAISS
 from langchain.indexes import VectorstoreIndexCreator
-from langchain.vectorstores import FAISS
-
 
 DOCUMENT_TABLE = os.environ["DOCUMENT_TABLE"]
 BUCKET = os.environ["BUCKET"]
@@ -59,9 +58,7 @@ def lambda_handler(event, context):
 
     index_from_loader.vectorstore.save_local("/tmp")
 
-    s3.upload_file(
-        "/tmp/index.faiss", BUCKET, f"{user_id}/{file_name_full}/index.faiss"
-    )
+    s3.upload_file("/tmp/index.faiss", BUCKET, f"{user_id}/{file_name_full}/index.faiss")
     s3.upload_file("/tmp/index.pkl", BUCKET, f"{user_id}/{file_name_full}/index.pkl")
 
     set_doc_status(user_id, document_id, "READY")

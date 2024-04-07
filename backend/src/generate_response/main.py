@@ -5,7 +5,7 @@ from langchain.llms.bedrock import Bedrock
 from langchain.memory.chat_message_histories import DynamoDBChatMessageHistory
 from langchain.memory import ConversationBufferMemory
 from langchain_community.embeddings import BedrockEmbeddings
-from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
 from langchain.chains import ConversationalRetrievalChain
 
 
