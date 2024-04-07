@@ -1,0 +1,38 @@
+{
+  "Records": [
+    {
+      "eventVersion": "2.1",
+      "eventSource": "aws:s3",
+      "awsRegion": "us-west-2",
+      "eventTime": "2024-04-07T15:06:48.505Z",
+      "eventName": "ObjectCreated:Put",
+      "userIdentity": {
+        "principalId": "AWS:AROA3LR2XDB6PSPKRFZDP:serverless-pdf-chat-backe-GeneratePresignedUrlFunc-Pft7j32Av4qA"
+      },
+      "requestParameters": {
+        "sourceIPAddress": "75.60.206.43"
+      },
+      "responseElements": {
+        "x-amz-request-id": "RV148GVKSYJZ82DS",
+        "x-amz-id-2": "lmwW0OLMBEl7bEQQJIx+KhWze/r811k2T95wSCxntlkeyQBvW0mW0l9WmewLiTNXUBsf/Tbwmi0gq9KRA+sKF6elYkmJQgnJ"
+      },
+      "s3": {
+        "s3SchemaVersion": "1.0",
+        "configurationId": "MWFmYWVjMmUtODYyMy00NTEzLWJiZDUtZDc5YzM4NzkxYWJh",
+        "bucket": {
+          "name": "serverless-pdf-chat-backend-us-west-2-780733454460",
+          "ownerIdentity": {
+            "principalId": "A2GHTXH8NA3XZB"
+          },
+          "arn": "arn:aws:s3:::serverless-pdf-chat-backend-us-west-2-780733454460"
+        },
+        "object": {
+          "key": "72f5f847-2db5-43df-b20f-df572a012234/index.pdf/index.pdf",
+          "size": 59956,
+          "eTag": "12233e2ae612bab05152fc088de680af",
+          "sequencer": "006612B68867396795"
+        }
+      }
+    }
+  ]
+}

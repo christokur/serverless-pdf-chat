@@ -4,13 +4,14 @@ from aws_lambda_powertools import Logger
 from langchain.llms.bedrock import Bedrock
 from langchain.memory.chat_message_histories import DynamoDBChatMessageHistory
 from langchain.memory import ConversationBufferMemory
-from langchain.embeddings import BedrockEmbeddings
+from langchain_community.embeddings import BedrockEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chains import ConversationalRetrievalChain
 
 
 MEMORY_TABLE = os.environ["MEMORY_TABLE"]
 BUCKET = os.environ["BUCKET"]
+REGION = os.environ["REGION"]
 
 
 s3 = boto3.client("s3")
@@ -31,15 +32,15 @@ def lambda_handler(event, context):
 
     bedrock_runtime = boto3.client(
         service_name="bedrock-runtime",
-        region_name="us-east-1",
+        region_name=REGION,
     )
 
     embeddings, llm = BedrockEmbeddings(
         model_id="amazon.titan-embed-text-v1",
         client=bedrock_runtime,
-        region_name="us-east-1",
+        region_name=REGION,
     ), Bedrock(
-        model_id="anthropic.claude-v2", client=bedrock_runtime, region_name="us-east-1"
+        model_id="anthropic.claude-v2", client=bedrock_runtime, region_name=REGION
     )
     faiss_index = FAISS.load_local("/tmp", embeddings)
 

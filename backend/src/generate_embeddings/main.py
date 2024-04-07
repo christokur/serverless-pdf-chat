@@ -1,7 +1,7 @@
 import os, json
 import boto3
 from aws_lambda_powertools import Logger
-from langchain.embeddings import BedrockEmbeddings
+from langchain_community.embeddings import BedrockEmbeddings
 from langchain.document_loaders import PyPDFLoader
 from langchain.indexes import VectorstoreIndexCreator
 from langchain.vectorstores import FAISS
@@ -9,6 +9,7 @@ from langchain.vectorstores import FAISS
 
 DOCUMENT_TABLE = os.environ["DOCUMENT_TABLE"]
 BUCKET = os.environ["BUCKET"]
+REGION = os.environ["REGION"]
 
 s3 = boto3.client("s3")
 ddb = boto3.resource("dynamodb")
@@ -40,13 +41,13 @@ def lambda_handler(event, context):
 
     bedrock_runtime = boto3.client(
         service_name="bedrock-runtime",
-        region_name="us-east-1",
+        region_name=REGION,
     )
 
     embeddings = BedrockEmbeddings(
         model_id="amazon.titan-embed-text-v1",
         client=bedrock_runtime,
-        region_name="us-east-1",
+        region_name=REGION,
     )
 
     index_creator = VectorstoreIndexCreator(

@@ -307,6 +307,7 @@ Resources:
         Variables:
           DOCUMENT_TABLE: !Ref DocumentTable
           BUCKET: !Ref DocumentBucket
+          REGION: !Sub ${AWS::Region}
       Events:
         EmbeddingQueueEvent:
           Type: SQS
@@ -336,6 +337,7 @@ Resources:
         Variables:
           MEMORY_TABLE: !Ref MemoryTable
           BUCKET: !Ref DocumentBucket
+          REGION: !Sub ${AWS::Region}
       Events:
         Root:
           Type: Api
