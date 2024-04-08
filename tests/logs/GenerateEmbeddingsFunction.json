@@ -1,0 +1,33 @@
+{
+  "level": "INFO",
+  "location": "decorate:445",
+  "message": {
+    "Records": [
+      {
+        "messageId": "2274e918-bd1b-4fb6-9fc1-963ef425db8c",
+        "receiptHandle": "AQEBRKc7fnWTWHknqLwpltEkkw0xh5Q1V99U4mozJJ1IpN3MFLvqIKRFIu0UFXV9iPgbNf1tRRioUm2LmqxjVWBXbZ943sVyw1OunUz3ZZMIOAIbdMk4p+imLOrBrhfMaCiBbkoE3aiKgMaLMsrC7jb4lx+fey1AXIf3Ft9gI9NdXaKYHm4jFuDX6inldJ0NGAfgxaQPu6MtWuuvGp8z+UHQc2hUacfnUUm70j5C4i+W43Ora1ma5ERBsF4AbKcSNq97yKvAqeTjA5AFdbUUJXfFUZKd/urKbb15r9/JXUD9ZycTiB4x74JmCKnHZ0BWHkeoVZAagd1FhHrfwDKmWKy2P5H+ZWWHKVmVL/od2UFs4anixLNazBrOOdQre9tggVh4IVCXQt2vIxSxXHqRGpg6Flk77E4bzmpbY/dWLJ7SZ/RwMt+wBVRypJDaibd9JIJ4",
+        "body": "{\"documentid\": \"7xK7Br2BkH4TSB7BL3wJ6Z\", \"key\": \"72f5f847-2db5-43df-b20f-df572a012234/index.pdf/index.pdf\", \"user\": \"72f5f847-2db5-43df-b20f-df572a012234\"}",
+        "attributes": {
+          "ApproximateReceiveCount": "1",
+          "AWSTraceHeader": "Root=1-6612cefb-018573881ec2d78304a99a0c;Parent=f6c1d32f810bd002;Sampled=1;Lineage=ef3a55ea:0",
+          "SentTimestamp": "1712508670042",
+          "SenderId": "AROA3LR2XDB6NXVZW3UOB:serverless-pdf-chat-backend-UploadTriggerFunction-GiuAlDdxz8lG",
+          "ApproximateFirstReceiveTimestamp": "1712508670055"
+        },
+        "messageAttributes": {},
+        "md5OfBody": "49ea1b79fa88a66858568dcb8ad92027",
+        "eventSource": "aws:sqs",
+        "eventSourceARN": "arn:aws:sqs:us-west-2:780733454460:serverless-pdf-chat-backend-EmbeddingQueue-yNjN8muwjS8j",
+        "awsRegion": "us-west-2"
+      }
+    ]
+  },
+  "timestamp": "2024-04-07 16:51:16,165+0000",
+  "service": "service_undefined",
+  "cold_start": true,
+  "function_name": "serverless-pdf-chat-backe-GenerateEmbeddingsFuncti-qtRcQGJpktVo",
+  "function_memory_size": "2048",
+  "function_arn": "arn:aws:lambda:us-west-2:780733454460:function:serverless-pdf-chat-backe-GenerateEmbeddingsFuncti-qtRcQGJpktVo",
+  "function_request_id": "3a2d452e-7550-5eb2-aee3-1ba2a47edee7",
+  "xray_trace_id": "1-6612cefe-96c375aba93068c0784d3fdd"
+}
